@@ -1,38 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #F1E5E0;
+  color: #334429;
+  font-family: 'Mulish', sans-serif;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+ 
 }
-
-.App-link {
-  color: #61dafb;
+.spinner {
+  width: 200px;
+  margin: 0 auto;
 }
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 2rem auto;
+}
+.form {
+  margin: 3rem auto 1rem;
+  display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.form label{
+  font-weight: 600;
+}
+.form input{
+  padding: .75rem .5rem;
+  outline: none;
+  margin-top: .75rem;
+  background: transparent;
+  border: 1px solid #334429;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.recipe {
+  margin: 1rem 0;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 300px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.recipe-container {
+  display: flex;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.recipe-container img {
+  height: 250px;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.recipe-container .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+.recipe-container .right {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem auto;
+  width: 100%;
+  border-left: 1px solid #A59495;
+ padding-left: 1.5rem;
+}
+.recipe-container .right h3{
+  margin-bottom: 1.25rem;
+}
+svg {
+  font-size: 24px;
+}
+.recipe-detail {
+  text-transform: capitalize;
+  display: flex;
+    align-items: center;
+    margin: .5rem 0;
+}
+button {
+  letter-spacing: 1px;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    margin: 1rem auto;
+    padding: 1rem 1.25rem;
+    background: #F1E5E0;
+    border-radius: 5px;
+    color: inherit;
+    cursor: pointer;
+}
+button:hover {
+  transform: scale(.98);
 }
