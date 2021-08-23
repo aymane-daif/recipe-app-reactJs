@@ -1,14 +1,12 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import { MdKitchen,MdFitnessCenter } from 'react-icons/md';
 import { GiHotMeal } from 'react-icons/gi';
 
-/*
- <ul>
-            {ingredients.map(ingredient => <li>{ingredient}</li>)}
 
-            </ul>
-             */
-function Recipe({image,label,cuisineType,calories,mealType}) {
+function Recipe({image,label,cuisineType,calories,mealType,uri}) {
+  const id = uri.substring(uri.indexOf('#')+1,uri.length)
+  
   return (
     <>
     <section className="recipe">
@@ -30,7 +28,8 @@ function Recipe({image,label,cuisineType,calories,mealType}) {
               <GiHotMeal />
               <p><strong>Meal Type: </strong> {mealType.join(" ")}</p>
             </div>
-            <button>See Recipe's Details</button>
+            <Link to={`/${id}`} className="btn">See Recipe's Details</Link>
+            
            </div>
          </div>
     </section>

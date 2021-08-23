@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+
 import Search from './components/Search';
 import Recipies from './components/Recipies';
 import Loading from './components/Loading';
@@ -20,7 +21,15 @@ function App() {
         setIsLoading={setIsLoading}
       />
       <main className="main"> 
-        {isLoading ? <Loading /> : recipies.length > 0 ? <Recipies recipies={recipies}/> : isEntry ? '' : <h1>There is no such recipe. Sorry...😢</h1>}
+        {
+        isLoading ? 
+          <Loading /> :
+          recipies.length > 0 ?
+            <Recipies recipies={recipies}/> : 
+              isEntry ? 
+                '' : 
+              <h1>There is no such recipe. Sorry...😢</h1>
+        }
       </main>
     </div>
   );

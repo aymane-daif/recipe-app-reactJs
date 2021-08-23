@@ -6,8 +6,9 @@ function Recipies({recipies}) {
   return (
     <>
       {recipies.map((item,index) => {
-       const {calories,cuisineType,dietLabels,label,ingredientLines,image,mealType} = item.recipe
+       const {calories,cuisineType,uri,label,image,mealType} = item.recipe
        return(
+      
         <Recipe 
           key={index}
           image={image} 
@@ -15,6 +16,7 @@ function Recipies({recipies}) {
           cuisineType={cuisineType} 
           calories={calories} 
           mealType={mealType}
+          uri={uri}
         />
        )
       })}
