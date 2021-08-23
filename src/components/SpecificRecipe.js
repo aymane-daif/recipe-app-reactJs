@@ -9,16 +9,15 @@ function SpecificRecipe() {
   const url = `https://api.edamam.com/api/recipes/v2/${id}?type=public&app_id=fa9dcf89&app_key=e55fbcf7e825e3653c5ad9c6e4f8bf11`
   const [specificRecipe,setSpecificRecipe] = useState({})
 
-  const getRecipe = async () => {
-    const response = await fetch(url)
-    const data = await response.json()
-    return data.recipe
-  }
+  
   useEffect(() => {
-    getRecipe().then(data => {
-      setSpecificRecipe(data)
-    })
-  },[id])
+    async function getRecipe() {
+      const response = await fetch(url)
+      const data = await response.json()
+      setSpecificRecipe(data.recipe)
+    }
+    getRecipe()
+  },[url])
   return (
     <>
      {Object.keys(specificRecipe).length > 0 && <section className="SpecificRecipe">
