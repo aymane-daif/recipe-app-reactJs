@@ -162,3 +162,10 @@ li {list-style: none;}
 .specific .right .column .recipe-ingredients ul li{
   font-size: 14px;
 }
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}

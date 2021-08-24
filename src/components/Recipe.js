@@ -28,7 +28,7 @@ function Recipe({image,label,cuisineType,calories,mealType,uri}) {
               <GiHotMeal />
               <p><strong>Meal Type: </strong> {mealType.join(" ")}</p>
             </div>
-            <Link to={`/${id}`} className="btn">See Recipe's Details</Link>
+            <Link to={`/specific${id}`} className="btn">See Recipe's Details</Link>
             
            </div>
          </div>

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import App from './App';
 import SpecificRecipe from './components/SpecificRecipe'
+import Error from './components/Error'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -11,8 +12,11 @@ ReactDOM.render(
           <Route exact path="/">
             <App />
           </Route>
-          <Route path="/:id">
+          <Route path="/specific:id">
             <SpecificRecipe />
+          </Route>
+          <Route path="*">
+            <Error />
           </Route>
         </Switch>
     </Router>

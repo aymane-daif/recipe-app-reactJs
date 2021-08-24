@@ -8,20 +8,22 @@ function Search({recipe,setRecipe,setRecipies,setIsEntry,setIsLoading}) {
   const getRecipies = async()=> {
     const response = await fetch(url)
     const data = await response.json()
-    console.log(data.hits);
     return data.hits
   }
   
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setIsLoading(true)
-    getRecipies().then(data => {
-      setRecipies(data);
-      setIsLoading(false)
-    })
-    setRecipe('')
-    setIsEntry(false)
+
+    if(recipe.trim()){
+      setIsLoading(true)
+      getRecipies().then(data => {
+        setRecipies(data);
+        setIsLoading(false)
+        setRecipe('')
+      })
+      setIsEntry(false)
+    }
   }
   return (
     <>
