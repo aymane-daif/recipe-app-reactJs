@@ -5,18 +5,50 @@
   box-sizing: border-box;
 }
 body {
-  background: #F1E5E0;
+  background: #f1e5e0;
   color: #334429;
   font-family: 'Mulish', sans-serif;
 }
-img {border-radius: 20px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);}
+img {
+  border-radius: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+svg {
+  font-size: 24px;
+  margin-right: 0.75rem;
+}
+li {
+  list-style: none;
+}
+.btn {
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  margin: 1rem auto;
+  padding: 1rem 1.25rem;
+  background: #f1e5e0;
+  border-radius: 5px;
+  color: inherit;
+  cursor: pointer;
+}
+.btn:hover {
+  transform: scale(0.98);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
 .App {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
- 
 }
 .spinner {
   width: 200px;
@@ -31,16 +63,16 @@ img {border-radius: 20px;
 .form {
   margin: 3rem auto 1rem;
   display: flex;
-    flex-direction: column;
-    width: 60%;
+  flex-direction: column;
+  width: 60%;
 }
-.form label{
+.form label {
   font-weight: 600;
 }
-.form input{
-  padding: .75rem .5rem;
+.form input {
+  padding: 0.75rem 0.5rem;
   outline: none;
-  margin-top: .75rem;
+  margin-top: 0.75rem;
   background: transparent;
   border: 1px solid #334429;
   border-radius: 5px;
@@ -55,16 +87,14 @@ img {border-radius: 20px;
   border-radius: 10px;
   overflow: hidden;
   height: 300px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 .recipe-container {
   display: flex;
-
 }
 .recipe-container img {
   height: 250px;
   object-fit: contain;
-  
 }
 .recipe-container .left {
   display: flex;
@@ -77,42 +107,21 @@ img {border-radius: 20px;
   flex-direction: column;
   margin: 1.5rem auto;
   width: 100%;
-  border-left: 1px solid #A59495;
- padding-left: 1.5rem;
+  border-left: 1px solid #a59495;
+  padding-left: 1.5rem;
 }
-.recipe-container .right h3{
+.recipe-container .right h3 {
   margin-bottom: 1.25rem;
-}
-svg {
-  font-size: 24px;
-  margin-right: .75rem;
 }
 .recipe-detail {
   text-transform: capitalize;
   display: flex;
-    align-items: center;
-    margin: .5rem 0;
-}
-.btn {
-  letter-spacing: 1px;
-    font-size: 14px;
-    font-family: inherit;
-    font-weight: bold;
-    border: none;
-    outline: none;
-    margin: 1rem auto;
-    padding: 1rem 1.25rem;
-    background: #F1E5E0;
-    border-radius: 5px;
-    color: inherit;
-    cursor: pointer;
-}
-.btn:hover {
-  transform: scale(.98);
+  align-items: center;
+  margin: 0.5rem 0;
 }
 .SpecificRecipe {
   display: flex;
-    flex-direction: column;
+  flex-direction: column;
 }
 .specific {
   justify-content: center;
@@ -123,14 +132,13 @@ svg {
   width: 70%;
   margin: 0rem auto 2rem;
   border-radius: 10px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
-.specific, .columns {
+.specific,
+.columns {
   display: flex;
   flex-direction: column;
 }
-li {list-style: none;}
-
 .specific .left {
   width: 100%;
   display: flex;
@@ -148,24 +156,45 @@ li {list-style: none;}
   align-self: flex-start;
   margin-left: 2rem;
 }
-.specific .right h3{
+.specific .right h3 {
   margin-bottom: 1rem;
 }
 .specific .right .column > div,
-.specific .right .column .recipe-ingredients ul li
-{
-  margin: .75rem 0;
+.specific .right .column .recipe-ingredients ul li {
+  margin: 0.75rem 0;
 }
 .specific .right .column .recipe-ingredients ul {
-  margin: .75rem 1.5rem;
+  margin: 0.75rem 1.5rem;
 }
-.specific .right .column .recipe-ingredients ul li{
+.specific .right .column .recipe-ingredients ul li {
   font-size: 14px;
 }
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
+@media (max-width: 998px) {
+  .main,
+  .form,
+  .specific {
+    width: 80%;
+  }
+}
+@media (max-width: 769px) {
+  .main,
+  .form,
+  .specific {
+    width: 90%;
+  }
+}
+@media (max-width: 700px) {
+  .recipe {
+    height: auto;
+  }
+  .recipe-container {
+    flex-direction: column;
+  }
+  .specific .left img {
+    width: 90%;
+    height: 320px;
+  }
+  .specific .right {
+    margin-left: 0rem;
+  }
 }
